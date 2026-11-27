@@ -5714,3 +5714,348 @@ img {
     margin-top: 2px !important;
     margin-bottom: 2px !important;
 }
+/* ACHIEVEMENT WELCOME SCREEN */
+
+.achievement-welcome {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #080808;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.welcome-content {
+    max-width: 750px;
+}
+
+.achievement-welcome .eyebrow {
+    color: #D4AF73;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.achievement-welcome h1 {
+    color: #FFFFFF;
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.achievement-welcome h1 em {
+    color: #D4AF73;
+}
+
+.achievement-welcome p {
+    color: #A0A0A0;
+}
+
+.achievement-welcome button {
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: #D4AF73;
+    color: #080808;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+/* PERSONAL AND FAMILY WELCOME SCREENS */
+
+.section-welcome {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: #080808;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.section-welcome-content {
+    max-width: 750px;
+}
+
+.section-welcome .eyebrow {
+    color: #D4AF73;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.section-welcome h1 {
+    color: #FFFFFF;
+    font-size: clamp(38px, 6vw, 70px);
+    line-height: 1.15;
+    margin: 20px 0;
+}
+
+.section-welcome h1 em {
+    color: #D4AF73;
+}
+
+.section-welcome p:not(.eyebrow) {
+    color: #A0A0A0;
+    line-height: 1.7;
+}
+
+.section-welcome button {
+    margin-top: 25px;
+    padding: 14px 30px;
+    background: #D4AF73;
+    color: #080808;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.section-welcome button:hover {
+    background: #FFFFFF;
+    transform: translateY(-3px);
+}
+
+/* =====================================
+   LUXURY BLACK & GOLD WELCOME SCREENS
+   ===================================== */
+
+.section-welcome,
+.achievement-welcome {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 30px;
+
+    background:
+        radial-gradient(ellipse at 50% 45%,
+            rgba(212, 175, 115, 0.20) 0%,
+            transparent 38%),
+        radial-gradient(circle at 15% 20%,
+            rgba(212, 175, 115, 0.13),
+            transparent 28%),
+        radial-gradient(circle at 85% 80%,
+            rgba(212, 175, 115, 0.12),
+            transparent 30%),
+        linear-gradient(135deg, #050505, #17120a, #050505);
+
+    background-size: 180% 180%;
+    animation: goldBackground 12s ease infinite;
+}
+
+/* GOLDEN LIGHT ORBS */
+
+.section-welcome::before,
+.achievement-welcome::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(circle at 25% 30%,
+            rgba(255, 215, 140, 0.24) 0,
+            transparent 8%),
+        radial-gradient(circle at 75% 65%,
+            rgba(212, 175, 115, 0.20) 0,
+            transparent 10%),
+        radial-gradient(circle at 50% 90%,
+            rgba(255, 220, 160, 0.13) 0,
+            transparent 12%);
+
+    animation: goldOrbs 9s ease-in-out infinite alternate;
+}
+
+/* GOLDEN FRAME */
+
+.section-welcome::after,
+.achievement-welcome::after {
+    content: "";
+    position: absolute;
+    inset: 22px;
+    z-index: -1;
+    pointer-events: none;
+    border: 1px solid rgba(212, 175, 115, 0.38);
+    box-shadow:
+        inset 0 0 35px rgba(212, 175, 115, 0.06),
+        0 0 25px rgba(212, 175, 115, 0.08);
+}
+
+/* WELCOME CONTENT */
+
+.section-welcome-content,
+.welcome-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 35px;
+    animation: welcomeEntrance 1.2s ease both;
+}
+
+/* SMALL GOLD LABEL */
+
+.section-welcome .eyebrow,
+.achievement-welcome .eyebrow {
+    color: #E4C58D;
+    letter-spacing: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    text-shadow: 0 0 15px rgba(212, 175, 115, 0.6);
+}
+
+/* MAIN HEADING */
+
+.section-welcome h1,
+.achievement-welcome h1 {
+    color: #FFFFFF;
+    font-size: clamp(40px, 6vw, 76px);
+    line-height: 1.12;
+    margin: 22px 0;
+    text-shadow: 0 5px 30px rgba(0, 0, 0, 0.8);
+}
+
+.section-welcome h1 em,
+.achievement-welcome h1 em {
+    color: #D4AF73;
+    font-style: normal;
+    text-shadow: 0 0 25px rgba(212, 175, 115, 0.5);
+}
+
+/* DESCRIPTION */
+
+.section-welcome p:not(.eyebrow),
+.achievement-welcome .welcome-content > p:not(.eyebrow) {
+    color: #D0C6B6;
+    line-height: 1.8;
+    font-size: 15px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* GOLD BUTTON */
+
+.section-welcome button,
+.achievement-welcome button {
+    margin-top: 32px;
+    padding: 15px 34px;
+    background: linear-gradient(135deg, #F2D59E, #C69A53, #E8C27E);
+    color: #080808;
+    border: 1px solid #F5DDAF;
+    cursor: pointer;
+    font-weight: 800;
+    letter-spacing: 2px;
+    box-shadow: 0 0 25px rgba(212, 175, 115, 0.28);
+    transition: all 0.35s ease;
+}
+
+.section-welcome button:hover,
+.achievement-welcome button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 40px rgba(212, 175, 115, 0.65);
+    background: #FFFFFF;
+}
+
+/* ANIMATIONS */
+
+@keyframes goldBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes goldOrbs {
+    from { transform: translate(-2%, -1%) scale(1); }
+    to { transform: translate(2%, 2%) scale(1.08); }
+}
+
+@keyframes welcomeEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SMALL SCREEN SUPPORT */
+
+@media (max-width: 600px) {
+    .section-welcome::after,
+    .achievement-welcome::after {
+        inset: 10px;
+    }
+
+    .section-welcome-content,
+    .welcome-content {
+        padding: 15px;
+    }
+
+    .section-welcome .eyebrow,
+    .achievement-welcome .eyebrow {
+        letter-spacing: 2px;
+        font-size: 10px;
+    }
+}
+/* HOMEPAGE NAME — MORE VISIBLE */
+.home-name,
+.hero-name {
+    display: inline-block;
+    position: relative;
+    padding: 12px 25px;
+    color: #D4AF73 !important;
+    font-size: clamp(42px, 6vw, 75px) !important;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-shadow:
+        0 0 10px rgba(212, 175, 115, 0.7),
+        0 0 25px rgba(212, 175, 115, 0.45);
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(212, 175, 115, 0.45);
+    border-radius: 15px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+}
+/* MAXIMUM HOMEPAGE NAME SIZE */
+.home-name,
+.hero-name {
+    display: inline-block !important;
+    position: relative;
+
+    font-size: clamp(90px, 14vw, 170px) !important;
+    font-weight: 900 !important;
+    letter-spacing: 6px !important;
+    line-height: 1.05 !important;
+
+    padding: 25px 40px !important;
+    color: #FFE2A3 !important;
+
+    -webkit-text-stroke: 1.5px #D4AF73;
+
+    text-shadow:
+        0 0 10px #FFE2A3,
+        0 0 25px #FFD98A,
+        0 0 45px rgba(212, 175, 115, 0.9),
+        0 0 75px rgba(212, 175, 115, 0.7);
+
+    background: rgba(5, 5, 5, 0.9);
+    border: 3px solid #D4AF73;
+    border-radius: 22px;
+
+    box-shadow:
+        0 0 35px rgba(212, 175, 115, 0.7),
+        inset 0 0 30px rgba(212, 175, 115, 0.2);
+}
