@@ -2881,3 +2881,2836 @@ a:focus-visible {
         grid-column: 3;
     }
 }
+
+/* =========================================================
+   BEA NAVATA — PREMIUM INTERACTIVE GOLD ANIMATION LAYER
+   CSS ONLY — NO JAVASCRIPT REQUIRED
+========================================================= */
+
+/* 1. CONTINUOUS MOVING GOLD BACKGROUND */
+body {
+    background-color: #050505 !important;
+    background-image:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(212,175,55,.16),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255,215,0,.10),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(166,124,0,.08),
+            transparent 45%
+        ) !important;
+    background-size: 200% 200%;
+    animation: goldBackgroundMotion 16s ease-in-out infinite alternate;
+}
+
+@keyframes goldBackgroundMotion {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 100%;
+    }
+}
+
+/* 2. MOVING GOLD LIGHT */
+.site-shell {
+    position: relative;
+    isolation: isolate;
+}
+
+.site-shell::before {
+    content: "";
+    position: fixed;
+    inset: -50%;
+    z-index: -1;
+    pointer-events: none;
+    background: linear-gradient(
+        120deg,
+        transparent 40%,
+        rgba(255,215,0,.07) 50%,
+        transparent 60%
+    );
+    animation: goldLightSweep 18s linear infinite;
+}
+
+@keyframes goldLightSweep {
+    from {
+        transform: translateX(-12%) rotate(0deg);
+    }
+    to {
+        transform: translateX(12%) rotate(0deg);
+    }
+}
+
+/* 3. FLOATING GOLD PARTICLE EFFECT */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+body::before {
+    width: 5px;
+    height: 5px;
+    left: 12%;
+    bottom: -20px;
+    background: #FFD700;
+    box-shadow:
+        0 0 10px #FFD700,
+        120px -120px 0 1px rgba(212,175,55,.8),
+        280px -280px 0 1px rgba(255,215,0,.7),
+        480px -160px 0 2px rgba(212,175,55,.6),
+        680px -380px 0 1px rgba(255,215,0,.7);
+    animation: floatingParticles 18s linear infinite;
+}
+
+body::after {
+    width: 4px;
+    height: 4px;
+    right: 15%;
+    bottom: -20px;
+    background: #FFE58A;
+    box-shadow:
+        0 0 10px #FFD700,
+        -160px -180px 0 1px rgba(255,215,0,.7),
+        -350px -350px 0 2px rgba(212,175,55,.6),
+        -550px -100px 0 1px rgba(255,215,0,.7);
+    animation: floatingParticles 23s linear infinite reverse;
+}
+
+@keyframes floatingParticles {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    15% {
+        opacity: .8;
+    }
+    80% {
+        opacity: .7;
+    }
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* KEEP CONTENT ABOVE DECORATIVE PARTICLES */
+.topbar,
+.home-main,
+.page-main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+/* 4. SMOOTH PAGE ENTRANCE */
+.site-shell {
+    animation: portfolioEntrance .8s ease both;
+}
+
+@keyframes portfolioEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 5. NAVIGATION HOVER EFFECT */
+.nav a {
+    position: relative;
+    overflow: hidden;
+    transition:
+        color .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+.nav a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(212,175,55,.3);
+    border-color: #FFD700;
+}
+
+/* ANIMATED UNDERLINE */
+.nav a::after {
+    content: "";
+    position: absolute;
+    bottom: 3px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #FFD700;
+    box-shadow: 0 0 8px #FFD700;
+    transition: width .35s ease, left .35s ease;
+}
+
+.nav a:hover::after {
+    width: 75%;
+    left: 12.5%;
+}
+
+/* 6. NAVIGATION CARD ANIMATION */
+.nav-card {
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        background .35s ease;
+}
+
+.nav-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow:
+        0 0 12px rgba(212,175,55,.3),
+        0 0 25px rgba(212,175,55,.12);
+}
+
+/* 7. GOLD GLOWING CARDS */
+.school-card,
+.info-card,
+.family-card {
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.school-card:hover,
+.info-card:hover,
+.family-card:hover {
+    border-color: #D4AF37 !important;
+    box-shadow:
+        0 0 14px rgba(212,175,55,.2),
+        0 8px 25px rgba(212,175,55,.10);
+    transform: translateY(-3px);
+}
+
+/* 8. IMAGE HOVER EFFECT */
+.hero-photo img,
+.profile-photo img,
+.school-logo img,
+.family-photo img,
+.gallery-photo img {
+    transition:
+        transform .5s ease,
+        filter .5s ease,
+        box-shadow .5s ease;
+}
+
+.hero-photo:hover img,
+.profile-photo:hover img,
+.family-photo:hover img,
+.gallery-photo:hover img {
+    transform: scale(1.045);
+    filter: brightness(1.08);
+}
+
+/* 9. GOLD IMAGE GLOW */
+.hero-photo:hover,
+.profile-photo:hover,
+.school-logo:hover,
+.family-photo:hover,
+.gallery-photo:hover {
+    border-color: #FFD700 !important;
+    box-shadow: 0 0 18px rgba(212,175,55,.3);
+}
+
+/* 10. BUTTON CLICK FEEDBACK */
+button,
+.outline-btn,
+.gallery-controls button,
+.lightbox button,
+.modal-close {
+    transition:
+        transform .2s ease,
+        background .25s ease,
+        color .25s ease,
+        box-shadow .25s ease;
+}
+
+button:hover,
+.outline-btn:hover {
+    box-shadow: 0 0 15px rgba(255,215,0,.3);
+}
+
+button:active,
+.outline-btn:active,
+.gallery-controls button:active,
+.lightbox button:active {
+    transform: scale(.92);
+}
+
+/* 11. ANIMATED GOLD BORDER */
+.hero-photo,
+.profile-intro,
+.info-card,
+.school-card,
+.family-card,
+.portrait-gallery {
+    transition: border-color .35s ease, box-shadow .35s ease;
+}
+
+.hero-photo:hover,
+.profile-intro:hover,
+.info-card:hover,
+.school-card:hover,
+.family-card:hover,
+.portrait-gallery:hover {
+    border-color: #D4AF37 !important;
+    box-shadow: 0 0 16px rgba(212,175,55,.16);
+}
+
+/* 12. GALLERY MOVEMENT */
+.gallery-photo {
+    transition:
+        transform .35s ease,
+        border-color .35s ease,
+        box-shadow .35s ease;
+}
+
+.gallery-photo:hover {
+    transform: translateY(-5px);
+    border-color: #FFD700 !important;
+    box-shadow: 0 0 18px rgba(255,215,0,.25);
+}
+
+/* 13. LIGHTBOX ENTRANCE */
+.lightbox.open img,
+#lightbox.open img {
+    animation: lightboxZoom .4s ease both;
+}
+
+@keyframes lightboxZoom {
+    from {
+        opacity: 0;
+        transform: scale(.92);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* 14. GOLD TEXT HIGHLIGHT */
+.hero-copy h1 em,
+.page-heading h1 em,
+.gallery-heading h2 em {
+    text-shadow: 0 0 16px rgba(255,215,0,.18);
+}
+
+/* 15. SMOOTH ACHIEVEMENT CAROUSEL */
+.carousel-track,
+.portrait-track {
+    will-change: transform;
+}
+
+/* 16. ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    body,
+    body::before,
+    body::after,
+    .site-shell,
+    .site-shell::before {
+        animation: none !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: .01ms !important;
+    }
+}
+
+/* =========================================
+   STRONGER MOVING BLACK & GOLD BACKGROUND
+   ========================================= */
+
+body {
+    background:
+        radial-gradient(
+            circle at 15% 25%,
+            rgba(212, 175, 55, 0.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 85% 75%,
+            rgba(255, 215, 0, 0.20),
+            transparent 40%
+        ),
+        linear-gradient(
+            125deg,
+            #050505,
+            #171205,
+            #080808,
+            #241900,
+            #050505
+        ) !important;
+
+    background-size: 250% 250% !important;
+    animation: goldBackgroundMove 12s ease-in-out infinite !important;
+}
+
+@keyframes goldBackgroundMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    25% {
+        background-position: 100% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 0% 100%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* STRONGER GOLD LIGHTING */
+.site-shell {
+    position: relative;
+    isolation: isolate;
+}
+
+.site-shell::before {
+    content: "";
+    position: fixed;
+    inset: -50%;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(
+            ellipse at 20% 30%,
+            rgba(255, 215, 0, 0.20),
+            transparent 30%
+        ),
+        radial-gradient(
+            ellipse at 80% 70%,
+            rgba(212, 175, 55, 0.22),
+            transparent 35%
+        );
+
+    background-size: 200% 200%;
+    animation: goldGlowMove 9s ease-in-out infinite alternate;
+}
+
+@keyframes goldGlowMove {
+    0% {
+        transform: translate(-8%, -5%) rotate(0deg);
+        opacity: 0.5;
+    }
+    100% {
+        transform: translate(8%, 5%) rotate(12deg);
+        opacity: 1;
+    }
+}
+
+/* FLOATING GOLD LIGHT EFFECT */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(75px);
+}
+
+body::before {
+    top: 5%;
+    left: -100px;
+    background: rgba(255, 215, 0, 0.20);
+    animation: floatingGoldOne 10s ease-in-out infinite alternate;
+}
+
+body::after {
+    right: -100px;
+    bottom: 5%;
+    background: rgba(212, 175, 55, 0.23);
+    animation: floatingGoldTwo 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatingGoldOne {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(160px, 180px);
+    }
+}
+
+@keyframes floatingGoldTwo {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(-170px, -150px);
+    }
+}
+
+/* KEEP WEBSITE CONTENT ABOVE DECORATIVE LIGHTS */
+.site-shell > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    body,
+    .site-shell::before,
+    body::before,
+    body::after {
+        animation: none !important;
+    }
+}
+
+/* =========================================
+   FIX: KEEP GOLD ANIMATIONS BEHIND CONTENT
+   ========================================= */
+
+/* Keep decorative background effects behind the website */
+body {
+    position: relative;
+    isolation: isolate;
+}
+
+/* Keep the moving gold lights behind everything */
+body::before,
+body::after {
+    z-index: -1 !important;
+    pointer-events: none !important;
+}
+
+/* Keep the animated glow behind the content */
+.site-shell {
+    position: relative;
+    isolation: isolate;
+    z-index: 0;
+}
+
+/* Keep all website content visible and clickable */
+.site-shell > * {
+    position: relative;
+    z-index: 1;
+}
+
+/* Prevent decorative effects from blocking clicks */
+.site-shell::before {
+    pointer-events: none !important;
+}
+
+/* Make sure photos remain visible */
+img {
+    position: relative;
+    z-index: 2;
+}
+
+/* GOLD CLICK RIPPLE */
+.gold-click-ripple {
+    position: fixed;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #FFD700;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 99999;
+    animation: goldRipple 0.8s ease-out forwards;
+}
+
+@keyframes goldRipple {
+    to {
+        width: 100px;
+        height: 100px;
+        opacity: 0;
+        box-shadow: 0 0 25px #D4AF37;
+    }
+}
+
+/* MOUSE GLOW */
+body::after {
+    background-image: radial-gradient(
+        circle 160px at var(--mouse-x, 50%) var(--mouse-y, 50%),
+        rgba(255, 215, 0, 0.10),
+        transparent 75%
+    );
+}
+
+/* KEEP ALL WEBSITE CONTENT VISIBLE */
+body {
+    opacity: 1 !important;
+    transition: opacity 0.5s ease;
+}
+
+body.page-loaded {
+    opacity: 1;
+}
+
+/* ACCESSIBILITY */
+@media (prefers-reduced-motion: reduce) {
+    .gold-click-ripple {
+        display: none;
+    }
+
+    body {
+        transition: none;
+    }
+}
+
+/* RESTORE WEBSITE AND PHOTO VISIBILITY */
+
+body {
+    opacity: 1 !important;
+}
+
+body.page-loaded {
+    opacity: 1 !important;
+}
+
+/* Keep images visible */
+img {
+    visibility: visible;
+}
+
+/* =========================================
+   HOMEPAGE PROFILE — GOLD GLASS FRAME
+   ========================================= */
+
+.hero-photo {
+    position: relative;
+    isolation: isolate;
+    padding: 14px;
+    border: 1px solid rgba(212, 175, 115, 0.75);
+    border-radius: 24px;
+    background: rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow:
+        0 0 20px rgba(212, 175, 115, 0.20),
+        0 0 45px rgba(212, 175, 115, 0.10),
+        inset 0 0 20px rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+/* Glass reflection */
+.hero-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(
+        135deg,
+        rgba(255,255,255,0.20),
+        transparent 35%,
+        rgba(212,175,115,0.08) 70%,
+        transparent
+    );
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* Gold glowing outline */
+.hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(255, 215, 130, 0.30);
+    border-radius: 18px;
+    pointer-events: none;
+    z-index: 3;
+}
+
+/* Profile picture */
+.hero-photo img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    display: block;
+}
+
+/* Hover glow */
+.hero-photo:hover {
+    transform: translateY(-6px);
+    border-color: #f5d47a;
+    box-shadow:
+        0 0 25px rgba(255, 215, 130, 0.35),
+        0 15px 45px rgba(0, 0, 0, 0.45),
+        inset 0 0 25px rgba(255, 255, 255, 0.10);
+}
+
+/* =========================================
+   HOMEPAGE NAME — LUXURY GOLD GLOW
+   ========================================= */
+
+.hero-copy h1 {
+    position: relative;
+    isolation: isolate;
+    color: #fff8e7;
+    text-shadow:
+        0 0 8px rgba(255, 215, 130, 0.35),
+        0 0 20px rgba(212, 175, 115, 0.30),
+        0 0 40px rgba(212, 175, 115, 0.20);
+    animation: nameGoldGlow 3s ease-in-out infinite alternate;
+}
+
+.hero-copy h1 em {
+    color: #e8bd50;
+    font-style: italic;
+    text-shadow:
+        0 0 10px rgba(255, 215, 100, 0.65),
+        0 0 25px rgba(212, 175, 115, 0.45),
+        0 0 45px rgba(212, 175, 115, 0.25);
+}
+
+/* Soft golden light behind the name */
+.hero-copy h1::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    width: 85%;
+    height: 100%;
+    top: 5%;
+    left: 5%;
+    background: radial-gradient(
+        ellipse,
+        rgba(212, 175, 55, 0.18),
+        transparent 70%
+    );
+    filter: blur(25px);
+    pointer-events: none;
+}
+
+@keyframes nameGoldGlow {
+    from {
+        text-shadow:
+            0 0 8px rgba(255, 215, 130, 0.25),
+            0 0 18px rgba(212, 175, 115, 0.20);
+    }
+    to {
+        text-shadow:
+            0 0 12px rgba(255, 215, 130, 0.55),
+            0 0 30px rgba(212, 175, 115, 0.40);
+    }
+}
+
+/* =========================================
+   CINEMATIC GOLD PAGE TRANSITION
+   ========================================= */
+
+.page-transition {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(5, 5, 5, 0.96);
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.page-transition.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.transition-text {
+    color: #e8bd70;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(28px, 5vw, 55px);
+    letter-spacing: 8px;
+    text-align: center;
+    text-shadow: 0 0 20px rgba(212,175,115,.7);
+    animation: transitionReveal 0.8s ease both;
+}
+
+.transition-subtitle {
+    color: #d0c4ad;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-top: 15px;
+    animation: transitionReveal 1s ease both;
+}
+
+.transition-line {
+    width: 0;
+    height: 2px;
+    margin-top: 25px;
+    background: linear-gradient(90deg, transparent, #e8bd70, #fff2c9, #e8bd70, transparent);
+    box-shadow: 0 0 15px #d4af73;
+    animation: transitionLine 0.8s ease forwards;
+}
+
+@keyframes transitionReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        letter-spacing: 15px;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes transitionLine {
+    to {
+        width: min(280px, 70vw);
+    }
+}
+
+/* =========================================
+   FIX: ACHIEVEMENTS PAGE TRANSITION
+   ========================================= */
+
+.page-transition {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999999 !important;
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: rgba(5, 5, 5, 0.97);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+.page-transition.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.transition-text {
+    color: #e8bd70;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 5vw, 55px);
+    letter-spacing: 6px;
+    text-align: center;
+    text-shadow: 0 0 25px rgba(212,175,115,.8);
+    animation: transitionReveal 0.8s ease both;
+}
+
+.transition-subtitle {
+    color: #d0c4ad;
+    font-size: 11px;
+    letter-spacing: 5px;
+    margin-top: 15px;
+}
+
+.transition-line {
+    height: 2px;
+    width: 0;
+    margin-top: 25px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        #e8bd70,
+        #fff2c9,
+        #e8bd70,
+        transparent
+    );
+    box-shadow: 0 0 15px #d4af73;
+    animation: transitionLine 0.8s ease forwards;
+}
+
+/* =========================================
+   FAMILY & FRIENDS - 50/50 LAYOUT
+========================================= */
+
+.family-page {
+    overflow: hidden;
+}
+
+.family-heading {
+    margin-bottom: 18px;
+}
+
+.family-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.family-section,
+.friends-section {
+    min-width: 0;
+    padding: 18px;
+    border: 1px solid rgba(212, 175, 115, 0.35);
+    border-radius: 16px;
+    background: rgba(15, 15, 15, 0.88);
+    box-shadow: 0 0 22px rgba(212, 175, 115, 0.07);
+}
+
+.family-section-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid rgba(212, 175, 115, 0.3);
+    padding-bottom: 10px;
+}
+
+.family-section-heading h2 {
+    color: #D4AF73;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.family-section-heading span {
+    color: #A0A0A0;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-align: right;
+}
+
+.family-members {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.family-member {
+    display: grid;
+    grid-template-columns: 40% 1fr;
+    align-items: center;
+    gap: 13px;
+    min-width: 0;
+    padding: 9px;
+    border: 1px solid rgba(212, 175, 115, 0.18);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.025);
+    transition: 0.3s ease;
+}
+
+.family-member:hover {
+    transform: translateY(-3px);
+    border-color: #D4AF73;
+    box-shadow: 0 0 15px rgba(212, 175, 115, 0.16);
+}
+
+.family-member-photo {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 9px;
+    border: 1px solid rgba(212, 175, 115, 0.55);
+}
+
+.family-member-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.family-member:hover .family-member-photo img {
+    transform: scale(1.06);
+}
+
+.family-member-info {
+    min-width: 0;
+}
+
+.family-member-info .level {
+    color: #D4AF73;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin: 0 0 5px;
+}
+
+.family-member-info h3 {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 0 0 6px;
+}
+
+.family-member-info > p:last-child {
+    color: #A0A0A0;
+    font-size: 10px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* FRIENDS CAROUSEL */
+
+.friends-carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 115, 0.65);
+    border-radius: 13px;
+    background: #101010;
+    box-shadow: 0 0 18px rgba(212, 175, 115, 0.12);
+}
+
+.friends-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.friend-slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.friend-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.friend-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 35px 15px 13px;
+    color: #D4AF73;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.88));
+}
+
+.friends-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 38px;
+    height: 38px;
+    border: 1px solid #D4AF73;
+    border-radius: 50%;
+    color: #D4AF73;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 17px;
+    cursor: pointer;
+    z-index: 5;
+    transition: 0.3s ease;
+}
+
+.friends-arrow:hover {
+    color: #080808;
+    background: #D4AF73;
+    box-shadow: 0 0 17px rgba(212, 175, 115, 0.6);
+}
+
+.friends-prev {
+    left: 12px;
+}
+
+.friends-next {
+    right: 12px;
+}
+
+.friends-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#friend-counter {
+    color: #D4AF73;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.friends-dots {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.friends-dots button {
+    width: 7px;
+    height: 7px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #686868;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.friends-dots button.active {
+    width: 21px;
+    border-radius: 10px;
+    background: #D4AF73;
+    box-shadow: 0 0 8px rgba(212, 175, 115, 0.5);
+}
+
+.friends-description {
+    color: #A0A0A0;
+    font-size: 12px;
+    line-height: 1.6;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.family-closing {
+    margin-top: 16px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .family-page {
+        overflow: visible;
+    }
+
+    .family-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 500px) {
+    .family-member {
+        grid-template-columns: 38% 1fr;
+    }
+
+    .family-member-info h3 {
+        font-size: 12px;
+    }
+
+    .family-member-info > p:last-child {
+        font-size: 9px;
+    }
+}
+
+/* =========================================
+   FAMILY PAGE - FIX SCREEN CUTTING
+========================================= */
+
+.family-page {
+    box-sizing: border-box;
+    padding-top: 5px;
+    padding-bottom: 8px;
+    overflow: hidden;
+}
+
+.family-heading {
+    margin-top: 0 !important;
+    margin-bottom: 12px !important;
+}
+
+.family-heading h1 {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.family-heading .muted {
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.family-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: stretch;
+    min-height: 0;
+}
+
+.family-section,
+.friends-section {
+    padding: 12px;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* FAMILY CARDS */
+
+.family-section-heading {
+    margin-bottom: 10px;
+    padding-bottom: 8px;
+}
+
+.family-members {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.family-member {
+    grid-template-columns: 34% 1fr;
+    gap: 10px;
+    padding: 7px;
+    min-height: 0;
+    height: 112px;
+    box-sizing: border-box;
+}
+
+.family-member-photo {
+    width: 100%;
+    height: 96px;
+    aspect-ratio: auto;
+    overflow: hidden;
+}
+
+.family-member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.family-member-info .level {
+    font-size: 9px;
+    margin-bottom: 4px;
+}
+
+.family-member-info h3 {
+    font-size: 13px;
+    margin-bottom: 4px;
+}
+
+.family-member-info > p:last-child {
+    font-size: 9px;
+    line-height: 1.35;
+}
+
+/* FRIENDS CAROUSEL */
+
+.friends-carousel {
+    width: 100%;
+    height: auto;
+    max-height: 340px;
+    aspect-ratio: 2 / 1;
+    overflow: hidden;
+}
+
+.friends-track,
+.friend-slide {
+    height: 100%;
+}
+
+.friend-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.friends-controls {
+    margin-top: 10px;
+}
+
+.friends-description {
+    font-size: 11px;
+    margin-top: 12px;
+    line-height: 1.4;
+}
+
+.family-closing {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* KEEP THE TWO COLUMNS ON DESKTOP */
+
+@media (min-width: 851px) {
+    .family-layout {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+}
+
+/* MOBILE AND SMALL SCREENS */
+
+@media (max-width: 850px) {
+    .family-page {
+        overflow: visible;
+    }
+
+    .family-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .family-section,
+    .friends-section {
+        overflow: visible;
+    }
+
+    .family-member {
+        height: auto;
+        min-height: 112px;
+    }
+
+    .friends-carousel {
+        max-height: none;
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* =========================================
+   ENLARGE FAMILY PHOTOS
+========================================= */
+
+.family-member {
+    grid-template-columns: 42% 1fr;
+    height: auto;
+    min-height: 135px;
+    padding: 9px;
+    gap: 12px;
+}
+
+.family-member-photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.family-member-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Keep family text properly aligned */
+.family-member-info {
+    min-width: 0;
+}
+
+.family-member-info h3 {
+    font-size: 14px;
+}
+
+/* Keep the family cards compact on smaller screens */
+@media (max-width: 850px) {
+    .family-member {
+        grid-template-columns: 42% 1fr;
+        min-height: 0;
+    }
+}
+
+/* =========================================
+   FAMILY CAROUSEL
+========================================= */
+
+.family-carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 115, 0.65);
+    border-radius: 13px;
+    background: #101010;
+    box-shadow: 0 0 18px rgba(212, 175, 115, 0.12);
+}
+
+.family-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.65s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.family-slide {
+    position: relative;
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+}
+
+.family-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.family-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 35px 18px 15px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.94));
+    text-align: center;
+}
+
+.family-caption p {
+    color: #D4AF73;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin: 0 0 5px;
+}
+
+.family-caption h3 {
+    color: white;
+    font-size: 17px;
+    margin: 0 0 5px;
+}
+
+.family-caption span {
+    color: #D0D0D0;
+    font-size: 11px;
+}
+
+.family-prev {
+    left: 12px;
+}
+
+.family-next {
+    right: 12px;
+}
+
+.family-carousel + .friends-controls {
+    margin-top: 12px;
+}
+
+@media (max-width: 850px) {
+    .family-carousel {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* =========================================
+   FAMILY & FRIENDS - MATCHED ALIGNMENT
+========================================= */
+
+.family-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 20px;
+}
+
+.family-section,
+.friends-section {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    min-width: 0;
+    height: 100%;
+}
+
+/* Make both carousel photo areas identical */
+
+.family-carousel,
+.friends-carousel {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 2 / 1;
+    max-height: none;
+    flex: none;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Make both tracks fill their carousel */
+
+.family-track,
+.friends-track {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    transition: transform 0.30s ease-in-out !important;
+}
+
+.family-slide,
+.friend-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: 100%;
+    min-width: 100%;
+}
+
+.family-slide img,
+.friend-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Match the counter and dots */
+
+.family-section .friends-controls,
+.friends-section .friends-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 25px;
+    margin-top: 12px;
+    flex-shrink: 0;
+}
+
+.family-section .friends-description,
+.friends-section .friends-description {
+    min-height: 36px;
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* Keep arrows responsive */
+
+.family-carousel .friends-arrow,
+.friends-carousel .friends-arrow {
+    transition: background 0.2s ease,
+                color 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+/* Mobile layout */
+
+@media (max-width: 850px) {
+    .family-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .family-carousel,
+    .friends-carousel {
+        aspect-ratio: 16 / 9;
+    }
+}
+
+/* FAST FRIENDS AND FAMILY CAROUSEL */
+
+#friends-track,
+#family-track {
+    transition: transform 0.12s linear !important;
+    will-change: transform;
+}
+.family-carousel,
+.friends-carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.family-track,
+.friends-track {
+    display: flex;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+    will-change: transform;
+}
+
+.family-slide,
+.friend-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+}
+
+.friends-arrow {
+    position: absolute;
+    z-index: 20;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+/* =========================================
+   FAMILY & FRIENDS - STATIC PHOTO GRID
+   ADD THIS AT THE BOTTOM OF style.css
+========================================= */
+
+.family-page {
+    display: flex !important;
+    flex-direction: column !important;
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+    padding: 10px 3% !important;
+    gap: 7px !important;
+}
+
+.family-heading {
+    flex: 0 0 auto !important;
+    margin: 0 0 5px !important;
+}
+
+.family-heading h1 {
+    font-size: clamp(30px, 3vw, 43px) !important;
+}
+
+.family-heading .gold-rule {
+    margin: 7px auto !important;
+}
+
+.family-gallery {
+    flex: 1 1 auto !important;
+    min-height: 0 !important;
+    display: grid !important;
+    grid-template-rows: 4fr 3fr 3fr !important;
+    gap: 9px !important;
+    overflow: hidden !important;
+}
+
+.family-gallery-section,
+.friends-gallery-section {
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
+}
+
+.family-gallery-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 auto;
+    margin-bottom: 5px;
+}
+
+.family-gallery-heading h2 {
+    color: var(--gold);
+    font-family: var(--heading);
+    font-size: 19px;
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+.family-gallery-heading span {
+    color: var(--muted);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.family-photo-grid {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.family-photo-card {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    background: #101010;
+    box-shadow: 0 0 12px rgba(212, 175, 115, 0.10);
+}
+
+.family-photo-card img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.family-photo-card:hover img,
+.friend-photo-card:hover img {
+    transform: scale(1.04);
+}
+
+.family-photo-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 22px 10px 8px;
+    text-align: center;
+    background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.95)
+    );
+}
+
+.family-photo-caption p {
+    color: var(--gold);
+    font-size: 8px;
+    letter-spacing: 2px;
+    margin: 0 0 2px;
+}
+
+.family-photo-caption h3 {
+    color: #fff;
+    font-size: 12px;
+    margin: 0 0 3px;
+}
+
+.family-photo-caption span {
+    color: #ddd;
+    font-size: 8px;
+    line-height: 1.3;
+    display: block;
+}
+
+.friends-photo-grid {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.friend-photo-card {
+    position: relative;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+    border: 1px solid var(--gold);
+    border-radius: 8px;
+    background: #101010;
+}
+
+.friend-photo-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.4s ease;
+}
+
+.friend-photo-card span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    text-align: center;
+    color: var(--gold-light);
+    background: rgba(0, 0, 0, 0.78);
+    font-size: 8px;
+    letter-spacing: 2px;
+}
+
+.family-closing {
+    flex: 0 0 auto !important;
+    margin-top: 3px !important;
+    padding: 5px !important;
+    font-size: 17px !important;
+}
+
+/* LAPTOP SCREEN */
+@media (max-height: 800px) and (min-width: 851px) {
+    .family-page {
+        padding-top: 6px !important;
+        padding-bottom: 6px !important;
+    }
+
+    .family-heading h1 {
+        font-size: 34px !important;
+    }
+
+    .family-gallery {
+        gap: 6px !important;
+    }
+
+    .family-photo-caption {
+        padding: 17px 7px 5px;
+    }
+
+    .family-photo-caption h3 {
+        font-size: 10px;
+    }
+
+    .family-photo-caption span {
+        font-size: 7px;
+    }
+
+    .family-closing {
+        font-size: 15px !important;
+    }
+}
+
+/* MOBILE */
+@media (max-width: 850px) {
+    body {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow: auto !important;
+    }
+
+    .site-shell {
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+    }
+
+    .family-page {
+        height: auto !important;
+        overflow: visible !important;
+    }
+
+    .family-gallery {
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: visible !important;
+    }
+
+    .family-gallery-section,
+    .friends-gallery-section {
+        overflow: visible !important;
+    }
+
+    .family-photo-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        min-height: 220px;
+    }
+
+    .friends-photo-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        min-height: 140px;
+    }
+
+    .family-photo-caption span {
+        display: none;
+    }
+
+    .family-photo-caption h3 {
+        font-size: 10px;
+    }
+
+    .family-closing {
+        margin-bottom: 10px !important;
+    }
+}
+
+@media (max-width: 500px) {
+    .family-photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .family-photo-card {
+        height: 260px;
+    }
+
+    .friends-photo-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .friend-photo-card {
+        height: 180px;
+    }
+
+    .family-gallery-heading h2 {
+        font-size: 17px;
+    }
+}
+/* =====================================
+   FAMILY & FRIENDS — 5:4 LANDSCAPE
+   ===================================== */
+
+.family-photo,
+.family-slide img,
+.friend-slide img,
+.family-card img,
+.friend-card img {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    display: block;
+}
+
+/* ==========================================
+   FAMILY PAGE — NEW TOP AND BOTTOM LAYOUT
+   ALL PHOTOS: 5:4 LANDSCAPE
+========================================== */
+
+.family-page-new {
+    overflow: hidden;
+    padding-top: 12px;
+    padding-bottom: 10px;
+}
+
+.family-heading-new {
+    margin-bottom: 12px;
+}
+
+.family-new-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    border-bottom: 1px solid rgba(212, 175, 115, 0.35);
+    padding-bottom: 7px;
+}
+
+.family-new-heading h2 {
+    color: #D4AF73;
+    font-size: 16px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.family-new-heading span {
+    color: #A0A0A0;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.family-new-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.family-new-card {
+    min-width: 0;
+    padding: 9px;
+    background: #111111;
+    border: 1px solid rgba(212, 175, 115, 0.4);
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}
+
+.family-new-card:hover {
+    transform: translateY(-4px);
+    border-color: #D4AF73;
+    box-shadow: 0 0 18px rgba(212, 175, 115, 0.2);
+}
+
+.family-new-photo {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 115, 0.5);
+}
+
+.family-new-photo img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.family-new-card:hover .family-new-photo img {
+    transform: scale(1.04);
+}
+
+.family-new-caption {
+    text-align: center;
+    padding: 10px 5px 5px;
+}
+
+.family-new-caption p {
+    color: #D4AF73;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin: 0 0 5px;
+}
+
+.family-new-caption h3 {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 0 0 7px;
+}
+
+.family-new-caption span {
+    display: block;
+    color: #A0A0A0;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+/* FRIENDS MOVING CAROUSEL */
+
+.friends-bottom-section {
+    margin-top: 17px;
+}
+
+.friends-new-heading {
+    margin-bottom: 9px;
+}
+
+.friends-marquee {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid rgba(212, 175, 115, 0.3);
+    border-bottom: 1px solid rgba(212, 175, 115, 0.3);
+    padding: 9px 0;
+    background: rgba(15, 15, 15, 0.7);
+}
+
+.friends-marquee-track {
+    display: flex;
+    width: max-content;
+    animation: friendsContinuousMove 35s linear infinite;
+}
+
+.friends-marquee:hover .friends-marquee-track {
+    animation-play-state: paused;
+}
+
+.friends-marquee-group {
+    display: flex;
+    flex-shrink: 0;
+    gap: 13px;
+    padding-right: 13px;
+}
+
+.friend-new-card {
+    position: relative;
+    flex: 0 0 190px;
+    width: 190px;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 115, 0.65);
+    border-radius: 9px;
+    background: #111111;
+}
+
+.friend-new-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.friend-new-card:hover img {
+    transform: scale(1.06);
+}
+
+.friend-new-card span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 18px 8px 8px;
+    text-align: center;
+    color: #D4AF73;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+}
+
+@keyframes friendsContinuousMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.friends-new-description {
+    text-align: center;
+    color: #A0A0A0;
+    font-size: 10px;
+    margin: 8px 0 0;
+}
+
+.family-closing-new {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .family-page-new {
+        overflow: visible;
+    }
+
+    .family-new-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .family-new-card {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .friend-new-card {
+        flex-basis: 160px;
+        width: 160px;
+    }
+
+    .family-new-heading span {
+        font-size: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .friends-marquee-track {
+        animation: none;
+    }
+}
+
+/* ==========================================
+   FAMILY & FRIENDS — TWO SWITCHABLE VIEWS
+========================================== */
+
+.family-switch-page {
+    overflow: hidden;
+    padding-top: 12px;
+    padding-bottom: 10px;
+}
+
+.family-switch-heading {
+    text-align: center;
+    margin-bottom: 14px;
+}
+
+.family-switch-heading h1 {
+    margin: 5px 0;
+}
+
+.family-view-navigation {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 12px auto 18px;
+}
+
+.family-view-button {
+    min-width: 155px;
+    padding: 11px 22px;
+    color: #D4AF73;
+    background: rgba(10, 10, 10, 0.8);
+    border: 1px solid rgba(212, 175, 115, 0.55);
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.family-view-button:hover,
+.family-view-button.active {
+    color: #080808;
+    background: linear-gradient(135deg, #F7D75B, #D4AF73);
+    border-color: #F7D75B;
+    box-shadow: 0 0 18px rgba(212, 175, 115, 0.35);
+}
+
+/* VIEW SWITCHING */
+
+.family-view,
+.friends-view {
+    display: none;
+    animation: familyViewAppear 0.45s ease;
+}
+
+.family-view.active,
+.friends-view.active {
+    display: block;
+}
+
+@keyframes familyViewAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* SECTION HEADING */
+
+.family-view-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8px;
+    margin-bottom: 14px;
+    border-bottom: 1px solid rgba(212, 175, 115, 0.4);
+}
+
+.family-view-title h2 {
+    color: #D4AF73;
+    font-size: 17px;
+    letter-spacing: 3px;
+    margin: 0;
+}
+
+.family-view-title span {
+    color: #A0A0A0;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* FAMILY CARDS */
+
+.family-view-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.family-view-card {
+    min-width: 0;
+    padding: 10px;
+    background: #111111;
+    border: 1px solid rgba(212, 175, 115, 0.4);
+    border-radius: 13px;
+    transition: 0.3s ease;
+}
+
+.family-view-card:hover {
+    transform: translateY(-4px);
+    border-color: #D4AF73;
+    box-shadow: 0 0 20px rgba(212, 175, 115, 0.2);
+}
+
+.family-view-photo {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    border-radius: 8px;
+    border: 1px solid rgba(212, 175, 115, 0.5);
+}
+
+.family-view-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.family-view-caption {
+    text-align: center;
+    padding: 12px 5px 5px;
+}
+
+.family-view-caption p {
+    color: #D4AF73;
+    font-size: 9px;
+    letter-spacing: 2px;
+    margin: 0 0 6px;
+}
+
+.family-view-caption h3 {
+    color: #FFFFFF;
+    font-size: 14px;
+    margin: 0 0 8px;
+}
+
+.family-view-caption span {
+    display: block;
+    color: #A0A0A0;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.family-bottom-message {
+    color: #D4AF73;
+    text-align: center;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 19px;
+    font-style: italic;
+    margin: 15px 0 10px;
+}
+
+/* FRIENDS VIEW */
+
+.friends-view-intro {
+    text-align: center;
+    color: #A0A0A0;
+    font-size: 12px;
+    margin: 5px 0 20px;
+}
+
+.friends-view-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 12px 0;
+    border-top: 1px solid rgba(212, 175, 115, 0.4);
+    border-bottom: 1px solid rgba(212, 175, 115, 0.4);
+    background: rgba(10, 10, 10, 0.55);
+}
+
+.friends-view-track {
+    display: flex;
+    width: max-content;
+    animation: friendsViewMoving 38s linear infinite;
+}
+
+.friends-view-carousel:hover .friends-view-track {
+    animation-play-state: paused;
+}
+
+.friends-view-group {
+    display: flex;
+    flex-shrink: 0;
+    gap: 16px;
+    padding-right: 16px;
+}
+
+.friends-view-card {
+    position: relative;
+    flex: 0 0 240px;
+    width: 240px;
+    aspect-ratio: 5 / 4;
+    overflow: hidden;
+    border: 1px solid rgba(212, 175, 115, 0.7);
+    border-radius: 10px;
+    background: #111111;
+}
+
+.friends-view-card img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.friends-view-card:hover img {
+    transform: scale(1.06);
+}
+
+.friends-view-card span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 10px 10px;
+    color: #D4AF73;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+}
+
+@keyframes friendsViewMoving {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.friends-view-note {
+    color: #A0A0A0;
+    text-align: center;
+    font-size: 11px;
+    margin: 14px 0;
+}
+
+/* NAVIGATION BUTTONS */
+
+.family-next-button {
+    display: block;
+    margin: 12px auto;
+    padding: 11px 24px;
+    color: #080808;
+    background: linear-gradient(135deg, #F7D75B, #D4AF73);
+    border: 1px solid #D4AF73;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.family-next-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 18px rgba(212, 175, 115, 0.5);
+}
+
+.family-next-button span {
+    font-size: 15px;
+    margin-left: 5px;
+}
+
+.family-switch-closing {
+    text-align: center;
+    color: #D4AF73;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 17px;
+    font-style: italic;
+    margin-top: 12px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 850px) {
+    .family-switch-page {
+        overflow: visible;
+    }
+
+    .family-view-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .family-view-card {
+        max-width: 500px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .friends-view-card {
+        flex-basis: 190px;
+        width: 190px;
+    }
+
+    .family-view-title span {
+        font-size: 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .friends-view-track {
+        animation: none;
+    }
+}
+
+/* ==========================================
+   FAMILY PAGE — FIX CUT-OFF AND OVERFLOW
+========================================== */
+
+.family-switch-page {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 8px 24px 12px !important;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.family-switch-page *,
+.family-switch-page *::before,
+.family-switch-page *::after {
+    box-sizing: border-box;
+}
+
+/* Reduce heading spacing */
+.family-switch-heading {
+    margin: 0 auto 10px !important;
+}
+
+.family-switch-heading .eyebrow {
+    margin: 0 0 5px;
+}
+
+.family-switch-heading h1 {
+    font-size: clamp(27px, 3vw, 38px);
+    margin: 4px 0 !important;
+}
+
+.family-switch-heading .muted {
+    margin: 5px 0;
+}
+
+/* Navigation buttons */
+.family-view-navigation {
+    margin: 10px auto 14px !important;
+    gap: 12px;
+}
+
+/* Section heading */
+.family-view-title {
+    margin-bottom: 10px !important;
+    padding-bottom: 6px;
+}
+
+/* Three family cards */
+.family-view-grid {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.family-view-card {
+    width: 100%;
+    min-width: 0;
+    padding: 8px;
+}
+
+/* Keep the requested 5:4 landscape ratio */
+.family-view-photo {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    max-height: 290px;
+    overflow: hidden;
+}
+
+.family-view-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Make captions fit */
+.family-view-caption {
+    padding: 8px 4px 4px;
+}
+
+.family-view-caption h3 {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.family-view-caption span {
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+/* Reduce extra spacing */
+.family-bottom-message {
+    margin: 9px 0 5px !important;
+    font-size: 17px;
+}
+
+.family-next-button {
+    margin: 7px auto !important;
+    padding: 9px 22px;
+}
+
+.family-switch-closing {
+    margin-top: 6px !important;
+    font-size: 15px;
+}
+
+/* Friends page spacing */
+.friends-view-carousel {
+    max-width: 100%;
+}
+
+.friends-view-card {
+    flex: 0 0 220px;
+    width: 220px;
+    aspect-ratio: 5 / 4;
+}
+
+/* Desktop screen fit */
+@media (min-width: 851px) {
+    .family-switch-page {
+        min-height: 0;
+    }
+
+    .family-view-grid {
+        align-items: start;
+    }
+}
+
+/* Smaller screens */
+@media (max-width: 850px) {
+    .family-switch-page {
+        overflow: visible;
+        padding: 12px 15px !important;
+    }
+
+    .family-view-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+    .family-view-photo {
+        max-height: none;
+    }
+
+    .family-view-navigation {
+        flex-wrap: wrap;
+    }
+}
+
+/* FAMILY PAGE — FINAL SIZE AND NAVIGATION FIX */
+
+.family-switch-page {
+    width: 94% !important;
+    max-width: 1300px !important;
+    padding: 6px 0 !important;
+    min-height: 0 !important;
+}
+
+.family-switch-heading {
+    margin-bottom: 6px !important;
+}
+
+.family-switch-heading h1 {
+    font-size: clamp(26px, 3vw, 36px) !important;
+}
+
+.family-view-navigation {
+    margin: 7px auto 12px !important;
+    flex-shrink: 0;
+}
+
+.family-view,
+.friends-view {
+    display: none;
+    width: 100%;
+    min-height: 0;
+}
+
+.family-view.active,
+.friends-view.active {
+    display: block !important;
+}
+
+.family-view-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 12px !important;
+}
+
+.family-view-card {
+    padding: 7px !important;
+}
+
+.family-view-photo {
+    height: 190px !important;
+    aspect-ratio: 5 / 4 !important;
+}
+
+.family-view-caption {
+    padding: 7px 3px !important;
+}
+
+.family-view-caption h3 {
+    font-size: 12px !important;
+}
+
+.family-view-caption span {
+    font-size: 9px !important;
+    line-height: 1.35 !important;
+}
+
+.family-bottom-message {
+    margin: 7px 0 !important;
+}
+
+.family-next-button {
+    margin: 6px auto !important;
+}
+
+.family-switch-closing {
+    margin-top: 5px !important;
+}
+
+.friends-view-carousel {
+    overflow: hidden !important;
+    width: 100% !important;
+}
+
+@media (max-width: 850px) {
+    .family-view-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .family-view-photo {
+        height: auto !important;
+        aspect-ratio: 5 / 4 !important;
+    }
+}
+/* FAMILY PHOTOS — LARGER 5:4 LANDSCAPE SIZE */
+
+.family-view-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.family-view-card {
+    width: 100%;
+    min-width: 0;
+}
+
+.family-view-photo {
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    border-radius: 12px;
+}
+
+/* Keep the photos large on desktop */
+@media (min-width: 769px) {
+    .family-view-photo {
+        width: 100%;
+        aspect-ratio: 5 / 4;
+        max-height: none;
+    }
+}
+/* FORCE BIGGER FAMILY PHOTOS — 5:4 LANDSCAPE */
+
+.family-view-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 15px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+.family-view-card {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
+}
+
+.family-view-photo {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 5 / 4 !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+/* FAMILY CAPTION — PREVENT TEXT FROM BEING CUT OFF */
+
+.family-view-card {
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+.family-view-caption {
+    height: auto !important;
+    min-height: max-content !important;
+    max-height: none !important;
+    overflow: visible !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    line-height: 1.4 !important;
+    padding: 10px 8px !important;
+}
+
+.family-view {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+}
+
+.family-view-grid {
+    height: auto !important;
+    align-items: start !important;
+}
+/* FAMILY PAGE — COMPACT SPACING */
+
+.family-view-grid {
+    gap: 12px !important;
+    margin-top: 8px !important;
+    padding: 0 5px !important;
+}
+
+.family-view-card {
+    gap: 5px !important;
+    margin: 0 !important;
+    padding: 8px !important;
+}
+
+.family-view-photo {
+    margin-bottom: 4px !important;
+}
+
+.family-view-caption {
+    margin: 0 !important;
+    padding: 5px 6px !important;
+    line-height: 1.25 !important;
+}
+
+.family-switch-heading {
+    margin-top: 5px !important;
+    margin-bottom: 8px !important;
+}
+
+.family-switch-page {
+    gap: 8px !important;
+}
+/* FAMILY PAGE — EXTRA COMPACT SPACING */
+
+.family-switch-page {
+    padding-top: 3px !important;
+    padding-bottom: 3px !important;
+    gap: 3px !important;
+}
+
+.family-switch-heading {
+    margin: 0 0 4px !important;
+    padding: 0 !important;
+}
+
+.family-view {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.family-view-grid {
+    gap: 7px !important;
+    margin: 2px 0 !important;
+    padding: 0 !important;
+}
+
+.family-view-card {
+    padding: 4px !important;
+    margin: 0 !important;
+    gap: 2px !important;
+}
+
+.family-view-photo {
+    margin: 0 !important;
+}
+
+.family-view-caption {
+    margin: 0 !important;
+    padding: 3px 4px !important;
+    line-height: 1.15 !important;
+}
+
+.family-switch-page .family-view-card h3,
+.family-switch-page .family-view-card p {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+}
