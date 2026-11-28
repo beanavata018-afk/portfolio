@@ -2880,6 +2880,17 @@ a:focus-visible {
         grid-row: 2;
         grid-column: 3;
     }
+
+    /* Match Appearance & Personality to the two-label/two-value layout
+       used in Personal Details. */
+    .personal-page .info-card:nth-child(3) dl {
+        grid-template-columns:
+            78px minmax(70px, 1fr)
+            78px minmax(70px, 1fr) !important;
+        column-gap: 8px !important;
+        row-gap: 5px !important;
+        font-size: 10px !important;
+    }
 }
 
 /* =========================================================
@@ -6058,4 +6069,502 @@ img {
     box-shadow:
         0 0 35px rgba(212, 175, 115, 0.7),
         inset 0 0 30px rgba(212, 175, 115, 0.2);
+}
+/* HOMEPAGE PHOTO — INTENSE GOLD & ORANGE ELECTRIC BORDER */
+
+.home-photo,
+.hero-photo,
+.profile-image {
+    position: relative !important;
+    display: inline-block !important;
+    padding: 9px !important;
+    border-radius: 25px !important;
+    isolation: isolate;
+    background: #080808;
+    z-index: 1;
+}
+
+/* BRIGHT MOVING ELECTRIC BORDER */
+.home-photo::before,
+.hero-photo::before,
+.profile-image::before {
+    content: "";
+    position: absolute;
+    inset: -7px;
+    z-index: -1;
+    border-radius: 30px;
+
+    background: conic-gradient(
+        from 0deg,
+        #FF4500,
+        #FF8C00,
+        #FFD700,
+        #FFF5B7,
+        #FFB000,
+        #FF5E00,
+        #FFD700,
+        #FFFFFF,
+        #FF8C00,
+        #FF4500
+    );
+
+    animation: electricGoldOrange 1.5s linear infinite;
+
+    box-shadow:
+        0 0 10px #FF8C00,
+        0 0 20px #FFD700,
+        0 0 35px #FF6500,
+        0 0 55px rgba(255, 140, 0, 0.9);
+
+    filter: brightness(1.5);
+}
+
+/* INNER BORDER */
+.home-photo::after,
+.hero-photo::after,
+.profile-image::after {
+    content: "";
+    position: absolute;
+    inset: 3px;
+    z-index: -1;
+    border-radius: 20px;
+    background: #080808;
+}
+
+/* FAST ELECTRIC MOVEMENT */
+@keyframes electricGoldOrange {
+    0% {
+        transform: rotate(0deg);
+        filter: brightness(1.3);
+    }
+    50% {
+        filter: brightness(2);
+    }
+    100% {
+        transform: rotate(360deg);
+        filter: brightness(1.3);
+    }
+}
+
+/* PHOTO */
+.home-photo img,
+.hero-photo img,
+.profile-image img {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border-radius: 17px;
+}
+/* HOMEPAGE PHOTO — BRIGHT GOLDEN BACK GLOW */
+
+.home-photo,
+.hero-photo,
+.profile-image {
+    position: relative !important;
+    isolation: isolate;
+    z-index: 2;
+}
+
+/* LARGE GOLD AND ORANGE AURA BEHIND PHOTO */
+.home-photo,
+.hero-photo,
+.profile-image {
+    filter:
+        drop-shadow(0 0 12px rgba(255, 215, 0, 0.9))
+        drop-shadow(0 0 25px rgba(255, 165, 0, 0.85))
+        drop-shadow(0 0 45px rgba(255, 140, 0, 0.75))
+        drop-shadow(0 0 75px rgba(255, 190, 0, 0.55));
+    animation: goldenPhotoGlow 2s ease-in-out infinite alternate;
+}
+
+/* GLOW PULSING ANIMATION */
+@keyframes goldenPhotoGlow {
+    0% {
+        filter:
+            drop-shadow(0 0 10px #FFD700)
+            drop-shadow(0 0 22px #FF8C00)
+            drop-shadow(0 0 40px rgba(255, 165, 0, 0.7));
+    }
+
+    100% {
+        filter:
+            drop-shadow(0 0 20px #FFF1A8)
+            drop-shadow(0 0 40px #FFD700)
+            drop-shadow(0 0 65px #FF8C00)
+            drop-shadow(0 0 90px rgba(255, 165, 0, 0.8));
+    }
+}
+
+/* =========================================
+   HOMEPAGE — FULL GOLD & ORANGE PHOTO GLOW
+   ========================================= */
+
+.home-main {
+    overflow: visible !important;
+}
+
+.hero-photo {
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: visible !important;
+    z-index: 2 !important;
+
+    /* Remove old glow effects */
+    filter: none !important;
+    box-shadow: none !important;
+}
+
+/* LARGE LIGHT AURA BEHIND THE PHOTO */
+.hero-photo::before {
+    content: "";
+    position: absolute;
+
+    /* Extend equally on all four sides */
+    inset: -45px;
+
+    z-index: -2;
+    border-radius: 50%;
+
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 215, 0, 0.65) 0%,
+        rgba(255, 165, 0, 0.45) 30%,
+        rgba(255, 100, 0, 0.25) 55%,
+        transparent 75%
+    );
+
+    filter: blur(35px);
+    opacity: 0.95;
+
+    animation: photoAura 2s ease-in-out infinite alternate;
+}
+
+/* EXTRA LEFT AND RIGHT LIGHT */
+.hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: -25px;
+    z-index: -1;
+    border-radius: 25px;
+    pointer-events: none;
+
+    box-shadow:
+        -20px 0 35px 12px rgba(255, 165, 0, 0.55),
+        20px 0 35px 12px rgba(255, 215, 0, 0.55),
+        0 -20px 35px 10px rgba(255, 190, 0, 0.4),
+        0 20px 35px 10px rgba(255, 100, 0, 0.4);
+}
+
+/* PHOTO ABOVE THE GLOW */
+.hero-photo img {
+    position: relative !important;
+    z-index: 1 !important;
+    display: block;
+    border-radius: 16px;
+}
+
+/* PULSING LIGHT */
+@keyframes photoAura {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.65;
+        filter: blur(30px);
+    }
+
+    100% {
+        transform: scale(1.12);
+        opacity: 1;
+        filter: blur(45px);
+    }
+}
+/* REMOVE BLACK BORDER AROUND HOMEPAGE PHOTO */
+
+.hero-photo {
+    background: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+.hero-photo::after {
+    display: none !important;
+}
+
+.hero-photo img {
+    border: none !important;
+    outline: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+}
+/* MOVING DARK ORANGE GLOW BORDER */
+
+.hero-photo {
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: visible !important;
+    border: none !important;
+}
+
+/* ROTATING DARK ORANGE LIGHT */
+.hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: -9px;
+    z-index: -1;
+    padding: 5px;
+    border-radius: 24px;
+    pointer-events: none;
+
+    background: conic-gradient(
+        from 0deg,
+        transparent 0deg,
+        #8B2500 35deg,
+        #FF4500 65deg,
+        #FF8C00 90deg,
+        #8B2500 125deg,
+        transparent 160deg,
+        transparent 200deg,
+        #A83200 235deg,
+        #FF6500 270deg,
+        #8B2500 310deg,
+        transparent 360deg
+    );
+
+    animation: darkOrangeElectric 2s linear infinite;
+
+    filter:
+        drop-shadow(0 0 8px #A83200)
+        drop-shadow(0 0 16px #FF6500)
+        drop-shadow(0 0 28px rgba(139, 37, 0, 0.9));
+}
+
+/* ROTATING ANIMATION */
+@keyframes darkOrangeElectric {
+    from {
+        transform: rotate(0deg);
+        filter: brightness(1);
+    }
+    50% {
+        filter: brightness(1.8);
+    }
+    to {
+        transform: rotate(360deg);
+        filter: brightness(1);
+    }
+}
+
+/* KEEP PHOTO CLEAR */
+.hero-photo img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    border: none !important;
+    outline: none !important;
+}
+/* DARK ORANGE MOVING BORDER DIRECTLY AROUND PHOTO */
+
+.hero-photo {
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: visible !important;
+    padding: 5px !important;
+    border: none !important;
+}
+
+/* MOVING BORDER */
+.hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: -5px;
+    border-radius: 20px;
+    padding: 5px;
+    z-index: 2;
+    pointer-events: none;
+
+    background: conic-gradient(
+        from 0deg,
+        #5A1A00,
+        #A83200,
+        #FF4500,
+        #FF8C00,
+        #5A1A00,
+        #FF6500,
+        #A83200,
+        #5A1A00
+    );
+
+    animation: orangeBorderMove 2s linear infinite;
+
+    /* Show only the border, not the center */
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+    filter: drop-shadow(0 0 8px #A83200);
+}
+
+.hero-photo img {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    border: none !important;
+    outline: none !important;
+    border-radius: 15px;
+}
+
+@keyframes orangeBorderMove {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* =====================================
+   MOVING GOLD & ORANGE ELECTRIC PHOTO BORDER
+===================================== */
+
+@property --electric-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.hero-photo {
+    position: relative !important;
+    isolation: isolate !important;
+    overflow: visible !important;
+    border: none !important;
+    background: transparent !important;
+    border-radius: 20px !important;
+    padding: 4px !important;
+    box-shadow: none !important;
+}
+
+/* MOVING ELECTRIC BORDER */
+.hero-photo::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    z-index: 2;
+    border-radius: 23px;
+    padding: 4px;
+    pointer-events: none;
+
+    background: conic-gradient(
+        from var(--electric-angle),
+        #7a2100,
+        #ff4500,
+        #ff8c00,
+        #ffd700,
+        #fff4b0,
+        #ff8c00,
+        #ff3300,
+        #8b2500,
+        #ffd700,
+        #7a2100
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    animation: electricBorderMove 2.5s linear infinite;
+
+    filter:
+        drop-shadow(0 0 5px #ff8c00)
+        drop-shadow(0 0 12px #ff4500)
+        drop-shadow(0 0 22px #d4af37);
+}
+
+/* GOLDEN AURA */
+.hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: -15px;
+    z-index: -1;
+    border-radius: 30px;
+    background: conic-gradient(
+        #ff4500,
+        #ffd700,
+        #ff8c00,
+        #ff4500
+    );
+    filter: blur(28px);
+    opacity: 0.65;
+    animation: auraPulse 2s ease-in-out infinite alternate;
+}
+
+.hero-photo img {
+    position: relative !important;
+    z-index: 1 !important;
+    display: block !important;
+    width: 100%;
+    height: 100%;
+    border: none !important;
+    outline: none !important;
+    border-radius: 16px !important;
+    box-shadow: none !important;
+}
+
+/* MOVING COLORS */
+@keyframes electricBorderMove {
+    to {
+        --electric-angle: 360deg;
+    }
+}
+
+/* GLOW PULSE */
+@keyframes auraPulse {
+    from {
+        opacity: 0.35;
+        filter: blur(20px);
+    }
+    to {
+        opacity: 0.85;
+        filter: blur(32px);
+    }
+}
+
+/* HOMEPAGE NAME — BOLD & PROMINENT */
+
+.hero-copy h1 {
+    font-weight: 900 !important;
+    font-size: clamp(65px, 8vw, 115px) !important;
+    line-height: 0.95 !important;
+    color: #ffffff !important;
+    letter-spacing: -2px !important;
+    text-shadow:
+        0 0 8px rgba(255, 215, 0, 0.6),
+        0 0 20px rgba(255, 140, 0, 0.45);
+}
+
+.hero-copy h1 em {
+    font-weight: 900 !important;
+    color: #FFD36A !important;
+    font-style: normal !important;
+}
+
+/* SOFT THIN BLACK GLOW */
+
+.hero-copy h1 {
+    -webkit-text-stroke: 0.4px #000000 !important;
+    paint-order: stroke fill;
+    text-shadow:
+        0 0 2px #000000,
+        0 0 5px rgba(0, 0, 0, 0.8),
+        0 0 9px rgba(0, 0, 0, 0.5) !important;
+}
+
+.hero-copy h1 em {
+    -webkit-text-stroke: 0.4px #000000 !important;
+    text-shadow:
+        0 0 2px #000000,
+        0 0 5px rgba(0, 0, 0, 0.8) !important;
 }
